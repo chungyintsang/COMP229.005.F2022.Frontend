@@ -31,7 +31,7 @@ export class InventoryRepository {
 
     async saveInventory(item: Inventory) {
 
-        // If it does not have id, then create a new item.
+        // If it does not have id in my current list in repo, then create a new item.
         if (item._id == null || item._id == "") {
             this.dataSource.insertInventory(item)
                 .subscribe(response => {

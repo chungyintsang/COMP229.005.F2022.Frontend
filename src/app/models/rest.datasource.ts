@@ -14,12 +14,14 @@ export class RestDataSource {
     auth_token: string;
 
     // To communicate with backend
-    constructor(private http: HttpClient) {        
+    constructor(private http: HttpClient) {     
+        //The private http is a class in HttpClient; http is a name named by you, and the type is HttpClient  
         this.baseUrl = "http://localhost:3000/";        
     }
 
     // Inventory
     getInventoryList(): Observable<Inventory[]> {
+        //Use the http you named in constructor here
         return this.http.get<Inventory[]>(
             this.baseUrl + "inventory/list"
         );

@@ -17,6 +17,7 @@ export class AddEditComponent {
 
     constructor(private repository: InventoryRepository,
                 private router: Router,
+                //activeRoute: just a parameter, not attribute
                 activeRoute: ActivatedRoute) 
     { 
         // Delete
@@ -33,13 +34,17 @@ export class AddEditComponent {
 
         // Add
         else {
+            //initialize the Size class
             this.item.size = new Size();
         }        
     }
 
+    //Save
     save(form: NgForm) {
         console.log('===== AddEditComponent save');
+        //Send to repo
         this.repository.saveInventory(this.item);
+        //Navigate user back to the list
         this.router.navigateByUrl("inventory/list");                
     }
 
