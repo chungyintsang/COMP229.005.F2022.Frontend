@@ -7,6 +7,7 @@ export class Inventory {
         public tags?: string[],
         public status?: string,
         public size?: Size
+        //Size : a class below
     ){}
 
 }
