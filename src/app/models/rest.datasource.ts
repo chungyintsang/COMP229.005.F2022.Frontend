@@ -5,7 +5,8 @@ import { map, catchError } from "rxjs/operators";
 import { HttpHeaders } from '@angular/common/http';
 import { Inventory } from "./inventory.model";
 import { ResponseModel } from "./response.model";
-import { User } from './user.model'
+import { User } from './user.model';
+import { environment } from "src/environments/environment";
 
 @Injectable()
 export class RestDataSource {
@@ -16,7 +17,7 @@ export class RestDataSource {
     // To communicate with backend
     constructor(private http: HttpClient) {     
         //The private http is a class in HttpClient; http is a name named by you, and the type is HttpClient  
-        this.baseUrl = "http://localhost:3000/";        
+        this.baseUrl = environment.apiURL;     
     }
 
     // Inventory
